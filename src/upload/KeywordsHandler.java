@@ -13,7 +13,7 @@ public class KeywordsHandler extends DBConnection {
         connect();
     }
 
-    public static ArrayList<String> selectKeywords(int personId) throws SQLException {
+    public ArrayList<String> getKeywords(int personId) throws SQLException {
         ArrayList<String> keywords = new ArrayList<>();
         ps = conn.prepareStatement("select Name from keywords where personID = ?");
         ps.setInt(1, personId);
